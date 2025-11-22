@@ -1,17 +1,16 @@
-function Avatar() {
-  return (
-    <img
-      className="avatar"
-      src="https://i.imgur.com/1bX5QH6.jpg"
-      alt="Lin Lanying"
-      width={100}
-      height={100}
-    />
-  );
-}
+import Profile from "./Profile";
 
-export default function Profile() {
+const App = () => {
+   const person="Tamim";
+  const size =38
+  const age = 39
   return (
-    <Avatar />
+    <div>
+     <div>
+      <Profile age={age} size={size} person={person}></Profile>
+     </div>
+    </div>
   );
-}
+};
+
+export default App;
