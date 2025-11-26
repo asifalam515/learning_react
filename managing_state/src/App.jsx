@@ -1,9 +1,9 @@
-import Form from "./components/Form";
+import Pointer from "./components/Pointer";
 
 const App = () => {
   return (
     <div>
-      <Form></Form>
+      <Pointer></Pointer>
     </div>
   );
 };
