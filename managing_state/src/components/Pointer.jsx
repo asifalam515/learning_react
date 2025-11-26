@@ -1,5 +1,13 @@
+import { useState } from "react";
 
 const Pointer = () => {
+    const [position,setPosition] = useState({x:0,y:0})
+    const handlePointerMove=(e)=>{
+        setPosition({
+            x:e.clientX,
+            y:e.clientY
+        })
+        }
     return (
          <div
             style={{
@@ -7,6 +15,7 @@ const Pointer = () => {
                 width: "100vw",
                 height: "100vh",
             }}
+            onPointerMove={handlePointerMove}
         >
             <div
                 style={{
@@ -17,7 +26,7 @@ const Pointer = () => {
                     top: -10,
                     width: 20,
                     height: 20,
-                    transform: ``,
+                    transform:`translate(${position.x}px, ${position.y}px) `,
                 }}
             />
         </div>
