@@ -1,9 +1,9 @@
-import Pointer from "./components/Pointer";
+import Mirror from "./components/Mirror";
 
 const App = () => {
   return (
     <div>
-      <Pointer></Pointer>
+      <Mirror></Mirror>
     </div>
   );
 };
