@@ -1,12 +1,12 @@
-import Menu from "./components/Mirror";
+import { Counter } from "./components/Counter";
 
 const App = () => {
  
   return (
-    <div>
-      
-    <Menu></Menu>
-    </div>
+  <div>
+    <Counter></Counter>
+     <Counter></Counter>
+  </div>
   );
 };
 
