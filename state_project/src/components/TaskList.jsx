@@ -1,18 +1,13 @@
+import Task from "./Task";
 
-const TaskList = () => {
+const TaskList = ({tasks}) => {
     return (
-        <div>
                 <ul>
-            <li>
-              <label type="checkbox"> <input type="text" />
-              <button>Save</button>
-              
-              <button>Delete</button>
-              </label>
-             
-            </li>
+                  {tasks.map((task)=>{
+                    return <Task id={task.id} ></Task>
+                  })}
+            
           </ul>
-        </div>
     );
 };
 

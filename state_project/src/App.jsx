@@ -1,12 +1,14 @@
+import { useState } from "react";
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
-
+import { initialTasks } from './data/tasks';
 const App = () => {
+  const [tasks,setTasks]=useState(initialTasks)
   return (
     <div>
           <h1>Prague itinerary</h1>
          <AddTask></AddTask>
-        <TaskList></TaskList>
+        <TaskList tasks={tasks}></TaskList>
     </div>
   );
 };
