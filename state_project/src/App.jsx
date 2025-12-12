@@ -7,6 +7,7 @@ const App = () => {
   return (
     <div>
           <h1>Prague itinerary</h1>
+          <p>Here i am going to deep dive about state in react</p>
          <AddTask></AddTask>
         <TaskList tasks={tasks}></TaskList>
     </div>
