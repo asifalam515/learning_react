@@ -11,29 +11,24 @@ const App = () => {
   }
   //handlers 
   const handleAddTask = (text)=>{
-    setTasks([
-      ...tasks,
-      {id:getNextId(tasks),
-        text:text,
-        done:false
-      }
-    ])
+  dispatch({
+    type:"added",
+    id:getNextId(),
+    text:text,
+  })
   }
 
   const handleChangeTask=(task)=>{
-    const nextTasks = tasks.map(t=>{
-      if(t.id === task.id){
-        return task
-      }else{
-        return t
-      }
-    })
-    setTasks(
-      nextTasks
-    )
+   dispatch({
+    type:"changed",
+    task:task
+   })
   }
   const handleDeleteTask=(taskId)=>{
-    setTasks(tasks.filter(task=>task.id!==taskId))
+   dispatch({
+    type:'deleted',
+    id:taskId
+   })
 
   }
   return (
