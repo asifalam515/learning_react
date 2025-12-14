@@ -5,7 +5,7 @@ const Task = ({task}) => {
     const [isEditing,setIsEditing ] = useState(false)
     let taskContent;
     if(isEditing){
-taskContent=(<><input value={task.text} />
+taskContent=(<><input value={task.text}  />
               
               <button onClick={()=>setIsEditing(false)}>Save</button></>)
     }
