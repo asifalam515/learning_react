@@ -1,20 +1,28 @@
 export default function taskReducer (tasks,action){
 // action =dispatch object
-if(action.type === 'added'){
-    // add logic
-    return [...tasks,{
+switch(action.type){
+    case 'added':{
+  return [...tasks,{
         id:action.id,
         text:action.text,
         done:false
     }]
+    }
+    case "changed":{
+        return tasks.map((t)=>{
+    if(t.id === action.task.id){
+        return action.task
+    }else{
+        return t
+    }
+})
+    }
+    case "deleted":{
+        return tasks.filter((t)=>t.id !== action.id)
+    }
+    default:{
+          throw Error(`not action matched with ${action.type}`)
+    }
 }
-else if(action.type ==="changed"){
-    // 
-}
-else if(action.type ==="deleted"){
-// delete task
-}
-else{
-    throw Error(`not action matched with ${action.type}`)
-}
+
 }
