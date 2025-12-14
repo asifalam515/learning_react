@@ -1,10 +1,10 @@
 import Task from "./Task";
 
-const TaskList = ({tasks}) => {
+const TaskList = ({tasks,handleChangeTask,handleDeleteTask}) => {
     return (
                 <ul>
                   {tasks.map((task)=>{
-                    return <Task key={task.id} task={task} ></Task>
+                    return <Task key={task.id} task={task} handleChangeTask={handleChangeTask} handleDeleteTask={handleDeleteTask}></Task>
                   })}
             
           </ul>

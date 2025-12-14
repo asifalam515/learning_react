@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Task = ({task}) => {
+const Task = ({task,handleDeleteTask,handleChangeTask}) => {
  
     const [isEditing,setIsEditing ] = useState(false)
     let taskContent;
@@ -18,10 +18,10 @@ taskContent=(<><input value={task.text}  />
     return (
         <>
         <li>
-              <label type="checkbox"> 
+              <label type="checkbox" checked={task.done} onChange={(e)=>handleChangeTask({... task,done:e.target.checked})}> 
               {taskContent}
             
-              <button>Delete</button>
+              <button onClick={()=>handleDeleteTask(task.id)}>Delete</button>
               </label>
              
             </li>

@@ -40,7 +40,7 @@ const App = () => {
     <div>
        
          <AddTask onAdd={handleAddTask}></AddTask>
-        <TaskList tasks={tasks}></TaskList>
+        <TaskList tasks={tasks} handleChangeTask={handleChangeTask}handleDeleteTask={handleDeleteTask} ></TaskList>
     </div>
   );
 };
