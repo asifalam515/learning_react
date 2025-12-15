@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useImmer } from "use-immer";
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 import { initialTasks } from './data/tasks';
+import taskReducer from "./reducers/taskReducer";
 const App = () => {
-  const [tasks,setTasks]=useState(initialTasks)
+  const [tasks,dispatch]= useImmer(taskReducer,initialTasks)
   const getNextId = (data)=>{
     const maxId = data.reduce((prev,current)=>prev 
   && prev.id>current.id?prev.id:current.id)

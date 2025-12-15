@@ -1,12 +1,13 @@
-export default function taskReducer (tasks,action){
+export default function taskReducer (draft,action){
 // action =dispatch object
 switch(action.type){
     case 'added':{
-  return [...tasks,{
+        draft.push({
         id:action.id,
         text:action.text,
         done:false
-    }]
+    })
+ 
     }
     case "changed":{
         return tasks.map((t)=>{
