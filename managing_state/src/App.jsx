@@ -1,19 +1,23 @@
-import { useState } from "react";
-import Counter from "./components/Counter";
-export default function Scoreboard() {
-  const [isPlayerA, setIsPlayerA] = useState(true);
+import { useState } from 'react';
+import Counter from './components/Counter';
+const App = () => {
+  const [showB, setShowB] = useState(true);
   return (
     <div>
-      {isPlayerA ? (
-        <Counter  person="taylor" ></Counter>
-      ) : (
-        <Counter person="Sarah" />
-      )}
-      <button onClick={() => {
-        setIsPlayerA(!isPlayerA);
-      }}>
-        Next player!
-      </button>
+      <Counter />
+      {showB && <Counter />} 
+      <label>
+        <input
+          type="checkbox"
+          checked={showB}
+          onChange={e => {
+            setShowB(e.target.checked)
+          }}
+        />
+        Render the second counter
+      </label>
     </div>
   );
 }
+
+export default App;
