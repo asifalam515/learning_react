@@ -1,9 +1,15 @@
-import Page from "./components/Page";
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import { ThemeContext } from "./context/ThemeContext";
 
 const App = () => {
+  const [name,setName]=useState('asif')
   return (
     <div>
-     <Page></Page>
+      <ThemeContext value={name}>
+ <Navbar></Navbar>
+      </ThemeContext>
+   
     </div>
   );
 };
