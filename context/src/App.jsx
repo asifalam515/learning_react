@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Accordian from "./components/Accordian";
 import Footer from "./components/Footer";
+import Footer2 from "./components/Footer2";
 import Navbar from "./components/Navbar";
 import { ThemeContext } from "./context/ThemeContext";
 
@@ -11,6 +12,7 @@ const App = () => {
       <ThemeContext value={name}>
  <Navbar></Navbar>
  <Accordian></Accordian>
+ <Footer2></Footer2>
  <Footer></Footer>
       </ThemeContext>
    
