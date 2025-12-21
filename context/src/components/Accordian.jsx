@@ -1,7 +1,7 @@
 
 const Accordian = () => {
     return (
-        <div>
+        <div className="m-2">
          <div className="collapse bg-base-100 border border-base-300">
   <input type="radio" name="my-accordion-1" defaultChecked />
   <div className="collapse-title font-semibold">How do I create an account?</div>
